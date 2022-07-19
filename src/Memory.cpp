@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void print_binary(unsigned int x)
+void print_binary(unsigned x)
 {
     for (int i = sizeof(x) << 3; i; i--)
         putchar('0' + ((x >> (i - 1)) & 1));
@@ -14,9 +14,9 @@ void print_binary32(uint32_t x)
         putchar('0' + ((x >> (i - 1)) & 1));
 }
 
-unsigned int Memory::calcOffset(unsigned int _line_size)
+unsigned Memory::calcOffset(unsigned _line_size)
 {
-    unsigned int bits = 0;
+    unsigned bits = 0;
     while (_line_size != 1)
     {
         _line_size = _line_size / 2;
@@ -25,10 +25,10 @@ unsigned int Memory::calcOffset(unsigned int _line_size)
     return bits;
 }
 
-unsigned int Memory::calcTag(unsigned int _n_lines, unsigned int _group_size)
+unsigned Memory::calcTag(unsigned _n_lines, unsigned _group_size)
 {
-    unsigned int bits = 0;
-    unsigned int groups = _n_lines / _group_size;
+    unsigned bits = 0;
+    unsigned groups = _n_lines / _group_size;
 
     while (groups != 1)
     {
@@ -40,15 +40,15 @@ unsigned int Memory::calcTag(unsigned int _n_lines, unsigned int _group_size)
 
 void Memory::access(uint32_t address)
 {
-    // Obtendo deslocamento (offset)
-    unsigned int offset = 0;
-    unsigned int tag = 0;
-    unsigned int id = 0;
+    // Obtendo offset, tag e id
+    unsigned offset = 0;
+    unsigned tag = 0;
+    unsigned id = 0;
 
     print_binary32(address);
     printf("\n");
 
-    unsigned int i = 0;
+    unsigned i = 0;
     while (i < ADDRESSING)
     {
         if (i < n_bits_offset)
@@ -84,14 +84,20 @@ void Memory::access(uint32_t address)
     printf("\n");
 }
 
-Memory::Memory(unsigned int _cache_size, unsigned int _line_size, unsigned int _group_size)
+Memory::Memory(unsigned _cache_size, unsigned _line_size, unsigned _group_size)
 {
     cache_size = _cache_size;
     line_size = _line_size;
     group_size = _group_size;
     n_lines = _cache_size / _line_size;
+    n_groups = n_lines / _group_size;
     n_bits_offset = calcOffset(_line_size);
     n_bits_tag = calcTag(n_lines, _group_size);
+
+    for (unsigned i = 0; i < n_groups; i++)
+    {
+        groups.push_back({});
+    }
 }
 
 Memory::~Memory()

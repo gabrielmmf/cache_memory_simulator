@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 #ifndef MEMORY_H
 #define MEMORY_H
@@ -10,22 +11,25 @@ using namespace std;
 class Memory
 {
 public:
-    Memory(unsigned int _cache_size, unsigned int _line_size, unsigned int _group_size);
+    Memory(unsigned _cache_size, unsigned _line_size, unsigned _group_size);
 
     virtual ~Memory();
 
     void access(uint32_t address);
 
 private:
-    unsigned int calcOffset(unsigned int line_size);
-    unsigned int calcTag(unsigned int n_lines, unsigned int group_size);
+    unsigned calcOffset(unsigned line_size);
+    unsigned calcTag(unsigned n_lines, unsigned group_size);
 
-    unsigned int cache_size;
-    unsigned int line_size;
-    unsigned int group_size;
-    unsigned int n_lines;
-    unsigned int n_bits_offset;
-    unsigned int n_bits_tag;
+    unsigned cache_size;
+    unsigned line_size;
+    unsigned group_size;
+    unsigned n_lines;
+    unsigned n_bits_offset;
+    unsigned n_bits_tag;
+    unsigned n_groups;
+
+    vector<vector<unsigned>> groups;
 };
 
 #endif

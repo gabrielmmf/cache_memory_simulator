@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
     Lendo os argumentos para definir tamanho da cache,
     linha, grupo e arquivo a ser acessado
     */
-    unsigned int cache_size = 0;
-    unsigned int line_size = 0;
-    unsigned int group_size = 0;
+    unsigned cache_size = 0;
+    unsigned line_size = 0;
+    unsigned group_size = 0;
     string file_name = "";
 
     cache_size = stoi(argv[1]);

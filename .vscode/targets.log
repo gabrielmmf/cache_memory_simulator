@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 19 15:38:50 2022
+# Make data base, printed on Tue Jul 19 19:11:54 2022
 
 # Variables
 
@@ -16,12 +16,10 @@ OBJ = $(patsubst $(SRC_FOLDER)%.cpp, $(OBJ_FOLDER)%.o, $(SRC))
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
-# environment
-NO_AT_BRIDGE = 1
-# environment
-GNOME_SHELL_SESSION_MODE = ubuntu
 # makefile (from 'Makefile', line 14)
 SRC = $(wildcard $(SRC_FOLDER)*.cpp)
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
@@ -66,12 +64,10 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# environment
-GNOME_TERMINAL_SERVICE = :1.1281
 # makefile
 MAKEFLAGS = pqrR
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=dea22a3967fe6538e300307c62d6c762
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=75dfe2faf88132fd15cf67d362d7191a
 # makefile
 CURDIR := /home/gabrielmmf/CC/2022-1/Organização de Computadores I/TP3
 # environment
@@ -97,7 +93,7 @@ MAKEFILE_LIST := Makefile
 # environment
 ZSH = /home/gabrielmmf/.oh-my-zsh
 # environment
-VSCODE_PID = 95455
+VSCODE_PID = 7687
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -105,13 +101,13 @@ XDG_SESSION_TYPE = x11
 # makefile (from 'Makefile', line 8)
 OBJ_FOLDER = ./obj/
 # environment
-SESSION_MANAGER = local/gabriel-ideapad-3:@/tmp/.ICE-unix/1794,unix/gabriel-ideapad-3:/tmp/.ICE-unix/1794
+SESSION_MANAGER = local/gabriel-ideapad-3:@/tmp/.ICE-unix/2749,unix/gabriel-ideapad-3:/tmp/.ICE-unix/2749
 # automatic
 *F = $(notdir $*)
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=dea22a3967fe6538e300307c62d6c762
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=75dfe2faf88132fd15cf67d362d7191a
 # environment
 INSIDE_NAUTILUS_PYTHON = 
 # automatic
@@ -133,8 +129,6 @@ SRC_FOLDER = ./src/
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/836ae441_b1bf_461f_a91d_bbf73d8c1897
-# environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
@@ -149,7 +143,7 @@ LANGUAGE = pt_BR:pt:en
 # makefile (from 'Makefile', line 12)
 MAIN = Main
 # environment
-INVOCATION_ID = 99d58247afbf498aa141f808286d8dda
+INVOCATION_ID = 1c20bc2fab904aaa9cb781484015f0f4
 # environment
 USERNAME = gabrielmmf
 # automatic
@@ -175,7 +169,7 @@ BIN_FOLDER = ./
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1794
+SYSTEMD_EXEC_PID = 2749
 # environment
 DISPLAY = :0
 # environment
@@ -187,7 +181,7 @@ DEFAULTS_PATH = /usr/share/gconf/ubuntu-xorg.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1471
+MANAGERPID = 2473
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
@@ -201,7 +195,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 COLORTERM = truecolor
 # environment
-JOURNAL_STREAM = 8:31505
+JOURNAL_STREAM = 8:51259
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -243,7 +237,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = ubuntu-xorg
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=19/159=12%
+# Load=113/1024=11%, Rehash=0, Collisions=9/156=6%
 
 # Pattern-specific Variable Values
 
@@ -269,7 +263,7 @@ obj/%.o: src/%.cpp
 obj/Memory.o: src/Memory.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Memory'
-#  Last modified 2022-07-19 15:30:31.821445429
+#  Last modified 2022-07-19 17:11:56.764920382
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 18):
@@ -277,9 +271,8 @@ obj/Memory.o: src/Memory.cpp
 
 # Not a target:
 src/simulador.cpp:
- 
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 15:38:12.459514787
+#  Last modified 2022-07-19 17:18:58.673293472
 #  File has been updated.
 #  Successfully updated.
 
@@ -291,6 +284,7 @@ Makefile:
 #  Successfully updated.
 
 clean:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -317,14 +311,14 @@ all: obj/Memory.o obj/simulador.o
 # Not a target:
 src/Memory.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 15:30:29.025458624
+#  Last modified 2022-07-19 17:11:51.100919573
 #  File has been updated.
 #  Successfully updated.
 
 obj/simulador.o: src/simulador.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'simulador'
-#  Last modified 2022-07-19 15:29:21.441785071
+#  Last modified 2022-07-19 17:01:14.102288682
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -362,6 +356,6 @@ obj/simulador.o: src/simulador.cpp
 # strcache performance: lookups = 41 / hit rate = 31%
 # hash-table stats:
 # Load=28/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Tue Jul 19 15:38:50 2022
+# Finished Make data base on Tue Jul 19 19:11:54 2022
 
  
