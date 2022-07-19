@@ -7,20 +7,6 @@
 
 using namespace std;
 
-/* void print_binary(uint32_t x)
-{
-    for (int i = sizeof(x) << 3; i; i--)
-        putchar('0' + ((x >> (i - 1)) & 1));
-} */
-
-/* void print_binary(uint32_t number)
-{
-    if (number >> 1) {
-        print_binary(number >> 1);
-    }
-    putc((number & 1) ? '1' : '0', stdout);
-} */
-
 int main(int argc, char *argv[])
 {
     /*
@@ -50,7 +36,6 @@ cout << mem.n_bits_deslocamento << endl
     while (fscanf(file, "%x", &address) != EOF)
     {
         mem.access(address);
-        //print_binary(address);
         printf("\n");
     }
     fclose(file);
