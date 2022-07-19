@@ -44,7 +44,7 @@ Dicas:
 
 1. Implementar uma Estrutura de Dados representando uma memória
 
-2. Inicializar a memória com os parâmetros cache_size, line_size, group_size, n_lines
+2. Inicializar a memória com os parâmetros cache_size, line_size, group_size
 
 3. Criar função access que recebe um endereço e realiza a simulação de seu acesso:
 
