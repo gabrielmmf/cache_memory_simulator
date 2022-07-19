@@ -49,3 +49,13 @@ Dicas:
 3. Criar função access que recebe um endereço e realiza a simulação de seu acesso:
 
 	1. Calcula deslocamento, tag e identificador
+
+	2. Utiliza a tag para acessar um grupo
+		
+		1. Se o identificador está no grupo: Move para o último lugar
+		
+		2. Senão:
+			
+			1. Se o grupo está cheio: Remove o primeiro da fila
+			
+			3. Insere identificador no último lugar

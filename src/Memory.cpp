@@ -82,6 +82,33 @@ void Memory::access(uint32_t address)
     printf("\n");
     printf("offset: %d", offset);
     printf("\n");
+
+    // Lógica para fazer um acesso à memória
+    std::vector<unsigned>::iterator itr = std::find(groups[tag].begin(), groups[tag].end(), id);
+
+    unsigned index = 0;
+    // O arquivo está no grupo
+    // Move o arquivo para a última posição
+    if (itr != groups[tag].cend())
+    {
+        unsigned index = std::distance(groups[tag].begin(), itr);
+        groups[tag].erase(groups[tag].begin() + index);
+        groups[tag].push_back(id);
+    }
+    // O arquivo não está no grupo
+    // Caso o grupo esteja cheio, apaga o primeiro item
+    else
+    {
+        if (groups[tag].size() > group_size)
+            groups[tag].erase(groups[tag].begin());
+        groups[tag].push_back(id);
+    }
+
+    for (unsigned i = 0; i < groups[tag].size(); i++)
+    {
+        cout << groups[tag][i] << " ";
+    }
+    cout << endl;
 }
 
 Memory::Memory(unsigned _cache_size, unsigned _line_size, unsigned _group_size)

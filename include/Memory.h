@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #ifndef MEMORY_H
 #define MEMORY_H
