@@ -3,7 +3,9 @@
 ## Objetivos do trabalho
 
 Desenvolver simulador e cache de um nível
+
 Entrada => acessos de memória
+
 Saída => Qual linha o bloco de memória RAM será armazenado
 
 OBS: Desenvolver política de substituição de páginas
