@@ -1,8 +1,3 @@
-#include <iostream>
-#include <string.h>
-#include <fstream>
-#include <vector>
-#include <sys/types.h>
 #include "Memory.h"
 
 using namespace std;
