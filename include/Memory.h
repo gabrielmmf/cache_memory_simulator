@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 
 #ifndef MEMORY_H
 #define MEMORY_H
@@ -16,6 +17,8 @@ public:
 
     virtual ~Memory();
 
+    void print();
+
     void access(uint32_t address);
 
 private:
@@ -26,9 +29,10 @@ private:
     unsigned line_size;
     unsigned group_size;
     unsigned n_lines;
+    unsigned n_groups;
     unsigned n_bits_offset;
     unsigned n_bits_tag;
-    unsigned n_groups;
+    unsigned n_bits_id;
 
     vector<vector<unsigned>> groups;
 };

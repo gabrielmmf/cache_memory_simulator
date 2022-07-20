@@ -24,9 +24,6 @@ int main(int argc, char *argv[])
     file_name = argv[4];
 
     Memory mem(cache_size, line_size, group_size);
-    /*
-cout << mem.n_bits_deslocamento << endl
-     << mem.n_bits_tag << endl; */
 
     // Lendo arquivo e armazenando nos acessos à memória
 
@@ -36,8 +33,10 @@ cout << mem.n_bits_deslocamento << endl
     while (fscanf(file, "%x", &address) != EOF)
     {
         mem.access(address);
-        printf("\n");
     }
+
+    mem.print();
+
     fclose(file);
     return 0;
 }

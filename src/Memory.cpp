@@ -38,15 +38,30 @@ unsigned Memory::calcTag(unsigned _n_lines, unsigned _group_size)
     return bits;
 }
 
+void Memory::print()
+{
+    unsigned index = 0;
+    for (unsigned i = 0; i < n_groups; i++)
+    {
+        for (unsigned j = 0; j < group_size; j++)
+        {
+            std::cout << std::setfill('0') << std::setw(3) << index << " ";
+            if (j < groups[i].size())
+                cout << "1 "
+                     << "0x" << setfill('0') << setw(8) << right << uppercase << hex << groups[i][j] << endl;
+            else
+                cout << "0" << endl;
+            index++;
+        }
+    }
+}
+
 void Memory::access(uint32_t address)
 {
     // Obtendo offset, tag e id
     unsigned offset = 0;
     unsigned tag = 0;
     unsigned id = 0;
-
-    print_binary32(address);
-    printf("\n");
 
     unsigned i = 0;
     while (i < ADDRESSING)
@@ -75,23 +90,16 @@ void Memory::access(uint32_t address)
         address = address >> 1;
         i++;
     }
-
-    printf("id: %d", id);
-    printf("\n");
-    printf("tag: %d", tag);
-    printf("\n");
-    printf("offset: %d", offset);
-    printf("\n");
-
     // Lógica para fazer um acesso à memória
     std::vector<unsigned>::iterator itr = std::find(groups[tag].begin(), groups[tag].end(), id);
 
     unsigned index = 0;
+
     // O arquivo está no grupo
     // Move o arquivo para a última posição
     if (itr != groups[tag].cend())
     {
-        unsigned index = std::distance(groups[tag].begin(), itr);
+        index = std::distance(groups[tag].begin(), itr);
         groups[tag].erase(groups[tag].begin() + index);
         groups[tag].push_back(id);
     }
@@ -103,12 +111,6 @@ void Memory::access(uint32_t address)
             groups[tag].erase(groups[tag].begin());
         groups[tag].push_back(id);
     }
-
-    for (unsigned i = 0; i < groups[tag].size(); i++)
-    {
-        cout << groups[tag][i] << " ";
-    }
-    cout << endl;
 }
 
 Memory::Memory(unsigned _cache_size, unsigned _line_size, unsigned _group_size)
@@ -120,11 +122,9 @@ Memory::Memory(unsigned _cache_size, unsigned _line_size, unsigned _group_size)
     n_groups = n_lines / _group_size;
     n_bits_offset = calcOffset(_line_size);
     n_bits_tag = calcTag(n_lines, _group_size);
+    n_bits_id = ADDRESSING - n_bits_tag - n_bits_offset;
 
-    for (unsigned i = 0; i < n_groups; i++)
-    {
-        groups.push_back({});
-    }
+    groups.resize(n_groups);
 }
 
 Memory::~Memory()
