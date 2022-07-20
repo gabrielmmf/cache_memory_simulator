@@ -93,25 +93,34 @@ void Memory::access(uint32_t address)
         i++;
     }
     // Lógica para fazer um acesso à memória
-    std::vector<unsigned>::iterator itr = std::find(groups[tag].begin(), groups[tag].end(), id);
+    std::vector<unsigned>::iterator itr = std::find(leastRecentlyUsed[tag].begin(), leastRecentlyUsed[tag].end(), id);
 
     unsigned index = 0;
 
     // O arquivo está no grupo
-    // Move o arquivo para a última posição
-    if (itr != groups[tag].cend())
+    // Move o arquivo para a última posição do leastRecentlyUsed
+    if (itr != leastRecentlyUsed[tag].cend())
     {
-        index = std::distance(groups[tag].begin(), itr);
-        groups[tag].erase(groups[tag].begin() + index);
-        groups[tag].push_back(id);
+        index = std::distance(leastRecentlyUsed[tag].begin(), itr);
+        leastRecentlyUsed[tag].erase(leastRecentlyUsed[tag].begin() + index);
+        leastRecentlyUsed[tag].push_back(id);
     }
     // O arquivo não está no grupo
-    // Caso o grupo esteja cheio, apaga o primeiro item
+    // Caso o grupo esteja cheio, apaga o primeiro item do least recently used
     else
     {
-        if (groups[tag].size() > group_size)
-            groups[tag].erase(groups[tag].begin());
-        groups[tag].push_back(id);
+        if (leastRecentlyUsed[tag].size() > group_size)
+        {
+            itr = std::find(groups[tag].begin(), groups[tag].end(), leastRecentlyUsed[tag][0]);
+            index = std::distance(groups[tag].begin(), itr);
+            leastRecentlyUsed[tag].erase(leastRecentlyUsed[tag].begin());
+            groups[tag][index] = id;
+        }
+        else
+        {
+            groups[tag].push_back(id);
+        }
+        leastRecentlyUsed[tag].push_back(id);
     }
 }
 
@@ -127,6 +136,7 @@ Memory::Memory(unsigned _cache_size, unsigned _line_size, unsigned _group_size)
     n_bits_id = ADDRESSING - n_bits_tag - n_bits_offset;
 
     groups.resize(n_groups);
+    leastRecentlyUsed.resize(n_groups);
 }
 
 Memory::~Memory()

@@ -34,6 +34,7 @@ private:
     unsigned n_bits_tag;
     unsigned n_bits_id;
 
+    vector<vector<unsigned>> leastRecentlyUsed;
     vector<vector<unsigned>> groups;
 };
 
