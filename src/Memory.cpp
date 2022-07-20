@@ -40,6 +40,8 @@ unsigned Memory::calcTag(unsigned _n_lines, unsigned _group_size)
 
 void Memory::print()
 {
+    cout << "================" << endl
+         << "IDX V ** ADDR **" << endl;
     unsigned index = 0;
     for (unsigned i = 0; i < n_groups; i++)
     {

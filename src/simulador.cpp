@@ -28,10 +28,9 @@ int main(int argc, char *argv[])
     while (fscanf(file, "%x", &address) != EOF)
     {
         mem.access(address);
+        mem.print();
     }
 
-    mem.print();
-
-    fclose(file);
+        fclose(file);
     return 0;
 }
