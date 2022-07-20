@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 20 16:10:43 2022
+# Make data base, printed on Wed Jul 20 16:56:36 2022
 
 # Variables
 
@@ -122,6 +122,7 @@ SHELL = /bin/sh
 MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
+ 
 # makefile (from 'Makefile', line 9)
 SRC_FOLDER = ./src/
 # environment
@@ -229,7 +230,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = ubuntu-xorg
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=7/158=4%
+# Load=109/1024=11%, Rehash=0, Collisions=6/152=4%
 
 # Pattern-specific Variable Values
 
@@ -238,10 +239,10 @@ GDMSESSION = ubuntu-xorg
 # Directories
 
 # src (device 66311, inode 1573134): 4 files, no impossibilities.
-# . (device 66311, inode 1572865): 11 files, no impossibilities.
+# . (device 66311, inode 1572865): 10 files, no impossibilities.
 # ./src (device 66311, inode 1573134): 4 files, no impossibilities.
 
-# 19 files, no impossibilities in 3 directories.
+# 18 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -255,23 +256,34 @@ obj/%.o: src/%.cpp
 obj/Memory.o: src/Memory.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Memory'
-#  Last modified 2022-07-19 23:17:12.282148233
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/Memory.o
+# automatic
+# * := Memory
+# automatic
+# < := src/Memory.cpp
+# automatic
+# + := src/Memory.cpp
+# automatic
+# % := 
+# automatic
+# ^ := src/Memory.cpp
+# automatic
+# ? := src/Memory.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
 #  recipe to execute (from 'Makefile', line 18):
 	$(CC) $(CXXFLAGS) -c $< -o $@ -I$(INCLUDE_FOLDER)
 
 # Not a target:
-src/simulador.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 23:14:11.604169738
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 15:29:19.641793971
+#  Last modified 2022-07-20 16:55:32.881502129
 #  File has been updated.
 #  Successfully updated.
 
@@ -280,8 +292,7 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
-	@rm -rf $(OBJ_FOLDER)*
- 
+	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET)
 
 # Not a target:
 .DEFAULT:
@@ -292,67 +303,41 @@ clean:
 all: obj/Memory.o obj/simulador.o
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# * := 
-# automatic
-# < := obj/Memory.o
-# automatic
-# + := obj/Memory.o obj/simulador.o
-# automatic
-# % := 
-# automatic
-# ^ := obj/Memory.o obj/simulador.o
-# automatic
-# ? := obj/Memory.o obj/simulador.o
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/20=10%
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 21):
 	$(CC) $(CXXFLAGS) -o $(BIN_FOLDER)$(TARGET) $(OBJ)
 
 # Not a target:
 src/Memory.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 22:50:55.476544948
+#  Last modified 2022-07-20 16:50:48.567173353
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-.SUFFIXES:
+obj/simulador.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/simulador.o: src/simulador.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'simulador'
-#  Last modified 2022-07-19 23:17:12.517873411
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 18):
-	$(CC) $(CXXFLAGS) -c $< -o $@ -I$(INCLUDE_FOLDER)
-
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=2/29=7%
+# Load=8/1024=1%, Rehash=0, Collisions=1/24=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 249 B / avg = 9 B
-# current buf: size = 8162 B / used = 249 B / count = 27 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 25 / storage = 221 B / avg = 8 B
+# current buf: size = 8162 B / used = 221 B / count = 25 / avg = 8 B
 
-# strcache performance: lookups = 41 / hit rate = 34%
+# strcache performance: lookups = 36 / hit rate = 30%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Wed Jul 20 16:10:43 2022
+# Load=25/8192=0%, Rehash=0, Collisions=0/36=0%
+# Finished Make data base on Wed Jul 20 16:56:36 2022
 
  

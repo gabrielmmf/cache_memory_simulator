@@ -21,4 +21,4 @@ all: $(OBJ)
 	$(CC) $(CXXFLAGS) -o $(BIN_FOLDER)$(TARGET) $(OBJ)
 
 clean:
-	@rm -rf $(OBJ_FOLDER)*
+	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET)

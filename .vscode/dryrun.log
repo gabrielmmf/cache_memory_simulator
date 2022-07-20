@@ -1,4 +1,4 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/gabrielmmf/CC/2022-1/Organização de Computadores I/TP3'
 g++ -std=c++11 -g -Wall -c src/Memory.cpp -o obj/Memory.o -I./include/
 g++ -std=c++11 -g -Wall -c src/simulador.cpp -o obj/simulador.o -I./include/

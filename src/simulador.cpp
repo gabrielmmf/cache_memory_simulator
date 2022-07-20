@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
         mem.access(address);
         mem.print();
     }
-
-        fclose(file);
+    fclose(file);
     return 0;
 }

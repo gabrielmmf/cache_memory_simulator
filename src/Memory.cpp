@@ -109,17 +109,25 @@ void Memory::access(uint32_t address)
     // Caso o grupo esteja cheio, apaga o primeiro item do least recently used
     else
     {
-        if (leastRecentlyUsed[tag].size() > group_size)
+        // Se o grupo está cheio:
+        if (leastRecentlyUsed[tag].size() >= group_size)
         {
+            /*
+            1. Encontra o primeiro da lista de leastRecentlyUsed nos grupos
+            2. Substitui ele no grupo
+            3. Remove o primeiro da lista de leastRecentlyUsed
+             */
             itr = std::find(groups[tag].begin(), groups[tag].end(), leastRecentlyUsed[tag][0]);
             index = std::distance(groups[tag].begin(), itr);
-            leastRecentlyUsed[tag].erase(leastRecentlyUsed[tag].begin());
             groups[tag][index] = id;
+            leastRecentlyUsed[tag].erase(leastRecentlyUsed[tag].begin());
         }
         else
         {
+            // Se o grupo não está cheio: Insere o identificador no final do grupo
             groups[tag].push_back(id);
         }
+        // Em qualquer caso, o leastRecentlyUsed é alterado
         leastRecentlyUsed[tag].push_back(id);
     }
 }
