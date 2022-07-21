@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Wed Jul 20 23:18:25 2022
+# Make data base, printed on Thu Jul 21 02:24:40 2022
 
 # Variables
 
@@ -94,7 +93,7 @@ MAKEFILE_LIST := Makefile
 # environment
 ZSH = /home/gabrielmmf/.oh-my-zsh
 # environment
-VSCODE_PID = 3067
+VSCODE_PID = 29224
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -102,7 +101,7 @@ XDG_SESSION_TYPE = x11
 # makefile (from 'Makefile', line 8)
 OBJ_FOLDER = ./obj/
 # environment
-SESSION_MANAGER = local/gabriel-ideapad-3:@/tmp/.ICE-unix/1807,unix/gabriel-ideapad-3:/tmp/.ICE-unix/1807
+SESSION_MANAGER = local/gabriel-ideapad-3:@/tmp/.ICE-unix/1782,unix/gabriel-ideapad-3:/tmp/.ICE-unix/1782
 # automatic
 *F = $(notdir $*)
 # environment
@@ -144,7 +143,7 @@ LANGUAGE = pt_BR:pt:en
 # makefile (from 'Makefile', line 12)
 MAIN = Main
 # environment
-INVOCATION_ID = 90b0754c9dda4bc1bed529980df7e519
+INVOCATION_ID = f898889231724bfaba587e23aa2023da
 # environment
 USERNAME = gabrielmmf
 # automatic
@@ -172,7 +171,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1829
+SYSTEMD_EXEC_PID = 1801
 # environment
 DISPLAY = :0
 # environment
@@ -184,9 +183,9 @@ DEFAULTS_PATH = /usr/share/gconf/ubuntu-xorg.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1529
+MANAGERPID = 1457
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3067
+GIO_LAUNCHED_DESKTOP_FILE_PID = 29224
 # environment
 PAGER = less
 # environment
@@ -196,7 +195,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:31553
+JOURNAL_STREAM = 8:38014
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -230,7 +229,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = ubuntu-xorg
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=6/152=4%
+# Load=109/1024=11%, Rehash=0, Collisions=7/158=4%
 
 # Pattern-specific Variable Values
 
@@ -239,10 +238,10 @@ GDMSESSION = ubuntu-xorg
 # Directories
 
 # src (device 66311, inode 1573134): 4 files, no impossibilities.
-# . (device 66311, inode 1572865): 11 files, no impossibilities.
+# . (device 66311, inode 1572865): 15 files, no impossibilities.
 # ./src (device 66311, inode 1573134): 4 files, no impossibilities.
 
-# 19 files, no impossibilities in 3 directories.
+# 23 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -256,29 +255,18 @@ obj/%.o: src/%.cpp
 obj/Memory.o: src/Memory.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Memory'
-#  File does not exist.
+#  Last modified 2022-07-21 02:07:32.392430397
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/Memory.o
-# automatic
-# * := Memory
-# automatic
-# < := src/Memory.cpp
-# automatic
-# + := src/Memory.cpp
-# automatic
-# % := 
-# automatic
-# ^ := src/Memory.cpp
-# automatic
-# ? := src/Memory.cpp
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 18):
 	$(CC) $(CXXFLAGS) -c $< -o $@ -I$(INCLUDE_FOLDER)
+
+# Not a target:
+src/simulador.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-20 23:10:03.608294233
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 Makefile:
@@ -292,6 +280,7 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 27):
+ 
 	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET) gen.out
 
 # Not a target:
@@ -303,18 +292,34 @@ clean:
 all: obj/Memory.o obj/simulador.o
 #  Command line target.
 #  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := obj/Memory.o
+# automatic
+# + := obj/Memory.o obj/simulador.o
+# automatic
+# % := 
+# automatic
+# ^ := obj/Memory.o obj/simulador.o
+# automatic
+# ? := obj/Memory.o obj/simulador.o
+# automatic
+# | := 
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+# Load=8/32=25%, Rehash=0, Collisions=2/20=10%
 #  recipe to execute (from 'Makefile', line 21):
 	$(CC) $(CXXFLAGS) -o $(BIN_FOLDER)$(TARGET) $(OBJ)
 
 # Not a target:
 src/Memory.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-07-20 23:10:06.120282164
 #  File has been updated.
 #  Successfully updated.
@@ -327,25 +332,34 @@ gen:
 	@g++ gen.cpp -o gen.out
 
 # Not a target:
-obj/simulador.o:
+.SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+obj/simulador.o: src/simulador.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'simulador'
+#  Last modified 2022-07-21 02:07:32.759358479
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(CC) $(CXXFLAGS) -c $< -o $@ -I$(INCLUDE_FOLDER)
+
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=1/25=4%
+# Load=10/1024=1%, Rehash=0, Collisions=2/30=7%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 224 B / avg = 8 B
-# current buf: size = 8162 B / used = 224 B / count = 26 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 289 B / avg = 9 B
+# current buf: size = 8162 B / used = 289 B / count = 32 / avg = 9 B
 
-# strcache performance: lookups = 39 / hit rate = 33%
+# strcache performance: lookups = 47 / hit rate = 31%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Wed Jul 20 23:18:25 2022
+# Load=32/8192=0%, Rehash=0, Collisions=0/47=0%
+# Finished Make data base on Thu Jul 21 02:24:40 2022
 
  

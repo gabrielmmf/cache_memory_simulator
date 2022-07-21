@@ -95,6 +95,7 @@ int main(int argc, char *argv[])
 
     ofstream file(file_name);
     uint32_t random_address;
+    vector<uint32_t> addresses;
     srand(time(NULL));
 
     unsigned n_lines = cache_size / line_size;
@@ -112,8 +113,18 @@ int main(int argc, char *argv[])
             random_address = random_address << 1;
             random_address = random_address | (rand() % 2);
         }
+
+        addresses.push_back(random_address);
         printAddress(random_address, n_bits_offset, n_bits_tag, file_name + "_fields");
         file << "0x" << setfill('0') << setw(8) << right << uppercase << hex << random_address << endl;
+
+        if (rand() % 2)
+        {
+            unsigned random = rand() % addresses.size();
+            random_address = addresses[random];
+            printAddress(random_address, n_bits_offset, n_bits_tag, file_name + "_fields");
+            file << "0x" << setfill('0') << setw(8) << right << uppercase << hex << random_address << endl;
+        }
     }
     file.close();
     return 0;
