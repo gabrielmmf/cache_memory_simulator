@@ -1,18 +1,18 @@
-# TP3-OC1
+# CACHE MEMORY SIMULATOR
 
-## Objetivos do trabalho
+## Objetivos do projeto
 
-Desenvolver simulador e cache de um nível
+Desenvolver simulador de cache de um nível
 
 Entrada => acessos de memória
 
 Saída => Qual linha o bloco de memória RAM será armazenado
 
-OBS: Desenvolver política de substituição de páginas
+Política de substituição de páginas Least Recently Used
 
 ## Especificação do Simulador
 
-Nome do arquivo => simulador
+Nome do arquivo de saída => simulador
 
 Argumentos:
 
@@ -31,14 +31,6 @@ Parâmetros fixos:
 2. Endereços referenciam bytes
 
 3. Politica de substituição LRU
-
-4. Alocação de linhas
-
-Dicas:
-
-1. Utilizar tipo uint32_t da biblioteca <sys/types.h>
-
-2. Implementar LRU com timestamp
 
 ## Planejamento
 
