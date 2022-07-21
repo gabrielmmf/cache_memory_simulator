@@ -20,5 +20,8 @@ $(OBJ_FOLDER)%.o: $(SRC_FOLDER)%.cpp
 all: $(OBJ)
 	$(CC) $(CXXFLAGS) -o $(BIN_FOLDER)$(TARGET) $(OBJ)
 
+gen:
+	@g++ gen.cpp -o gen.out
+
 clean:
-	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET)
+	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET) gen.out

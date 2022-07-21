@@ -47,7 +47,7 @@ void Memory::print()
     {
         for (unsigned j = 0; j < group_size; j++)
         {
-            std::cout << std::setfill('0') << std::setw(3) << index << " ";
+            std::cout << std::setfill('0') << std::setw(3) << dec << index << " ";
             if (j < groups[i].size())
                 cout << "1 "
                      << "0x" << setfill('0') << setw(8) << right << uppercase << hex << groups[i][j] << endl;

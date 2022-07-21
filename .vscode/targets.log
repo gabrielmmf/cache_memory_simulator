@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Wed Jul 20 16:56:36 2022
+# Make data base, printed on Wed Jul 20 23:18:25 2022
 
 # Variables
 
@@ -122,7 +123,6 @@ SHELL = /bin/sh
 MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
- 
 # makefile (from 'Makefile', line 9)
 SRC_FOLDER = ./src/
 # environment
@@ -239,10 +239,10 @@ GDMSESSION = ubuntu-xorg
 # Directories
 
 # src (device 66311, inode 1573134): 4 files, no impossibilities.
-# . (device 66311, inode 1572865): 10 files, no impossibilities.
+# . (device 66311, inode 1572865): 11 files, no impossibilities.
 # ./src (device 66311, inode 1573134): 4 files, no impossibilities.
 
-# 18 files, no impossibilities in 3 directories.
+# 19 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -283,7 +283,7 @@ obj/Memory.o: src/Memory.cpp
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 16:55:32.881502129
+#  Last modified 2022-07-20 23:18:23.516807395
 #  File has been updated.
 #  Successfully updated.
 
@@ -291,8 +291,8 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET)
+#  recipe to execute (from 'Makefile', line 27):
+	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLDER)$(TARGET) gen.out
 
 # Not a target:
 .DEFAULT:
@@ -314,9 +314,17 @@ all: obj/Memory.o obj/simulador.o
 # Not a target:
 src/Memory.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 16:50:48.567173353
+ 
+#  Last modified 2022-07-20 23:10:06.120282164
 #  File has been updated.
 #  Successfully updated.
+
+gen:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	@g++ gen.cpp -o gen.out
 
 # Not a target:
 obj/simulador.o:
@@ -325,19 +333,19 @@ obj/simulador.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=1/24=4%
+# Load=9/1024=1%, Rehash=0, Collisions=1/25=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 221 B / avg = 8 B
-# current buf: size = 8162 B / used = 221 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 224 B / avg = 8 B
+# current buf: size = 8162 B / used = 224 B / count = 26 / avg = 8 B
 
-# strcache performance: lookups = 36 / hit rate = 30%
+# strcache performance: lookups = 39 / hit rate = 33%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Wed Jul 20 16:56:36 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/39=0%
+# Finished Make data base on Wed Jul 20 23:18:25 2022
 
  
