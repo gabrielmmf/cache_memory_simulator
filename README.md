@@ -1,59 +1,59 @@
 # CACHE MEMORY SIMULATOR
 
-## Objetivos do projeto
+## Project goals
 
-Desenvolver simulador de cache de um nível
+Develop one-level cache simulator
 
-Entrada => acessos de memória
+Input => memory accesses
 
-Saída => Qual linha o bloco de memória RAM será armazenado
+Output => Which line the RAM memory block will be stored
 
-Política de substituição de páginas Least Recently Used
+Least Recently Used page replacement policy
 
-## Especificação do Simulador
+## Simulator Specification
 
-Nome do arquivo de saída => simulador
+Output file name => simulator
 
-Argumentos:
+Arguments:
 
-1. Tamanho da cache (4096 = 4KB)
+1. Cache size (4096 = 4KB)
 
-2. Tamanho de cada linha (1024 = 1KB)
+2. Size of each line (1024 = 1KB)
 
-3. Tamanho de cada grupo (2 = 2-way associativo)
+3. Size of each group (2 = 2-way associative)
 
-4. Nome do arquivo com os acessos à memória
+4. File name with memory accesses
 
-Parâmetros fixos:
+Fixed parameters:
 
-1. Endereçamento de 32 bits
+1. 32-bit addressing
 
-2. Endereços referenciam bytes
+2. Addresses reference bytes
 
-3. Politica de substituição LRU
+3. LRU Replacement Policy
 
-## Planejamento
+## Planning
 
-1. Implementar uma Estrutura de Dados representando uma memória
+1. Implement a Data Structure representing a memory
 
-2. Inicializar a memória com os parâmetros cache_size, line_size, group_size
+2. Initialize memory with cache_size, line_size, group_size parameters
 
-3. Criar função access que recebe um endereço e realiza a simulação de seu acesso:
+3. Create the access function that receives an address and simulates its access:
 
-   1. Calcula deslocamento, tag e identificador
+    1. Calculates displacement, tag and identifier
 
-   2. Utiliza a tag para acessar um grupo
+    2. Use the tag to access a group
 
-      1. Se o identificador está no grupo: Move para o último lugar da lista de leastRecentlyUsed
+       1. If the identifier is in the group: Move to the last place in the leastRecentlyUsed list
 
-      2. Senão:
+       2. Else:
 
-         1. Se o grupo está cheio:
+          1. If the group is full:
 
-            1. Encontra o primeiro da lista de leastRecentlyUsed nos grupos
-            2. Substitui ele
-            3. Remove o primeiro da lista de leastRecentlyUsed
+             1. Finds the first in the list of leastRecentlyUsed in groups
+             2. Replace it
+             3. Removes the first from the list of leastRecentlyUsed
 
-         2. Senão: Insere o identificador no final do grupo
+          2. Else: Inserts the identifier at the end of the group
 
-         3. Insere o identificador no final da lista de leastRecentlyUsed
+          3. Insert the identifier at the end of the leastRecentlyUsed list
